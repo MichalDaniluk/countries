@@ -1,7 +1,21 @@
-Kraj: {{ countryName }}
 
-<img src="{{ countryInfo[0].flags.png }}" alt="">
-<p>{{countryInfo[0].cioc}}</p>
-<p>Stolica: {{countryInfo[0].capital}}</p>
-<p>{{countryInfo[0].currencies}}</p>
-<p>Populacja: {{countryInfo[0].population}}</p>
+
+
+
+
+<mat-card class="card">
+	<mat-card-header>
+	  <div mat-card-avatar class="header-image"></div>
+	  <mat-card-title>{{ countryName.toUpperCase() }}</mat-card-title>
+	  <mat-card-subtitle>Region: {{ countryInfo[0].region }}, Stolica: {{countryInfo[0].capital}}</mat-card-subtitle>
+	</mat-card-header>
+	<img mat-card-image src="{{ flagImage }}" alt="{{ countryName }} flag">
+	<mat-card-content>
+		<ul>
+			<li>Populacja: {{ population }}</li>
+			<li>{{countryInfo[0].cioc}}</li>
+			<li>Waluta: {{countryInfo[0].currencies}}</li>
+			<li><a href="{{countryInfo[0].maps.googleMaps}}">Mapa Google</a></li>
+		</ul>
+	</mat-card-content>
+  </mat-card>

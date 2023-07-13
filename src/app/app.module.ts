@@ -24,8 +24,6 @@ import { AboutMeComponent } from './core/components/about-me/about-me.component'
     ContentComponent,
     MessageComponent,
     PageNotFoundComponent,
-    AboutComponent,
-    AboutMeComponent,
   ],
   imports: [
     CoreModule,
@@ -39,6 +37,8 @@ import { AboutMeComponent } from './core/components/about-me/about-me.component'
     CountryInfoComponent,
     CountryDetailsComponent,
     BrowserAnimationsModule,
+	AboutComponent,
+	AboutMeComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
