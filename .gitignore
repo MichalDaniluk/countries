@@ -1,0 +1,6 @@
+node_modules
+dist
+.DS_Store
+.angular/
+package-lock.json
+tsconfig.spec.json

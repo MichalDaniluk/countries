@@ -1,0 +1,11 @@
+@import 'variables.scss';
+
+.active {
+	background-color:$cl-white;
+	color:$cl-black;
+	box-shadow: .2rem .2rem 0 $cl-orange;
+}
+
+.spacer {
+	flex: 1 1 auto;
+}

@@ -1,0 +1,17 @@
+<div class="header">Region: {{ region.charAt(0).toUpperCase()+region.slice(1) }}</div>
+<p class="spinner" *ngIf="loading">Ładowanie danych...</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+	<ng-container matColumnDef="flag">
+		<th mat-header-cell *matHeaderCellDef> Flaga </th>
+		<td mat-cell *matCellDef="let element"><a href="{{'country/' +  element.name.common.toLowerCase()}}"><img src={{element.flags.png}} alt="{{element.name.common.toLowerCase()}}"></a></td>
+	  </ng-container>
+
+	<ng-container matColumnDef="title">
+	  <th mat-header-cell *matHeaderCellDef> Nazwa kraju </th>
+	  <td mat-cell *matCellDef="let element"><a href="{{'country/' +  element.name.common.toLowerCase()}}">{{element.name.official}}</a></td>
+	</ng-container>
+
+	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

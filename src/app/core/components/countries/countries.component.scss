@@ -1,0 +1,15 @@
+@import 'variables.scss';
+
+td {
+	padding: 0 .5rem;
+	border-bottom:1px solid $cl-lightGray;
+
+	img {
+		height: 30px;
+	}
+
+	a {
+		color: $cl-black;
+		text-decoration: none;
+	}
+}
