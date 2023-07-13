@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CountryInfoComponent } from './core/components/country-info/country-info.component';
 import { CoreModule } from './modules/core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutMeComponent } from './core/components/about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MessageComponent,
     PageNotFoundComponent,
     AboutComponent,
+    AboutMeComponent,
   ],
   imports: [
     CoreModule,

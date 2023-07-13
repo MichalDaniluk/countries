@@ -1,4 +1,9 @@
-# Portfolio
+# Countries
+
+## Załozenia projektu
+
+Projekt ma byc napisany jakby był częścią duzego projektu.
+W projekcie uzyto: modułów, Angular Material, pipe, zapytań do REST API, RxJs i Observables, localStorage, LazyLoading, routing, scss, services, Lifecycle Hooks, NgRx, Angular Signals
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
 
