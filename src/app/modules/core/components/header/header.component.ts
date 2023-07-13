@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AboutMeComponent } from 'src/app/core/components/about-me/about-me.component';
+import { AboutMeComponent } from 'src/app//components/about-me/about-me.component';
 import {MatDialog} from '@angular/material/dialog';
 
 @Component({

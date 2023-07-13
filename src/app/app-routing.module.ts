@@ -1,34 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { CountriesListComponent } from './pages/countries-list/countries-list.component';
-import { CountryDetailsComponent } from './pages/country-details/country-details.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { AboutComponent } from './pages/about/about.component';
+import { PageNotFoundComponent } from './modules/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-    pathMatch: 'full',
-    title: 'Witaj na stronie głównej',
-  },
-  {
-    path: 'countries/:region',
-    component: CountriesListComponent,
-    title: 'Lista krajów wybranego regionu',
-  },
-  {
-    path: 'country/:name',
-    component: CountryDetailsComponent,
-    title: 'Dane szczegółowe wybranego kraju',
-  },
-  { path: 'about', component: AboutComponent, title: 'O programie' },
-  {
-    path: '**',
-    component: PageNotFoundComponent,
-    title: '404 - Szukana strona nie istnieje',
-  },
+	{
+		path:'regions',
+		loadChildren:() => import('./modules/regions/regions.module').then(m => m.RegionsModule)
+	},
+	{
+		path: 'countries',
+		loadChildren:() => import('./modules/countries/countries.module').then(m => m.CountriesModule)
+	},
+	{
+		path:'country',
+		loadChildren:() => import('./modules/country-details/country-details.module').then(m => m.CountryDetailsModule)
+	},
+	{
+		path: 'page',
+		loadChildren:() => import('./modules/pages/pages.module').then(m => m.PagesModule)
+	},
+	{
+		path: '**',
+		component: PageNotFoundComponent,
+		title: '404 - Szukana strona nie istnieje',
+	},
 ];
 
 @NgModule({

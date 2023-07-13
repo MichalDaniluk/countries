@@ -1,0 +1,17 @@
+<div class="header">Region: {{ region | titlecase }}</div>
+<p *ngIf="isEmpty">Brak danych</p>
+<table *ngIf="!isEmpty" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+	<ng-container matColumnDef="flag">
+		<th mat-header-cell *matHeaderCellDef> Flaga </th>
+		<td mat-cell *matCellDef="let element"><a href="{{ 'country/' +  element.name.common | lowercase }}"><img src={{element.flags.png}} alt="{{element.name.common | lowercase}}"></a></td>
+	  </ng-container>
+
+	<ng-container matColumnDef="title">
+	  <th mat-header-cell *matHeaderCellDef> Nazwa kraju </th>
+	  <td mat-cell *matCellDef="let element"><a href="{{ 'country/' +  element.name.common | lowercase }}">{{element.name.official}}</a></td>
+	</ng-container>
+
+	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

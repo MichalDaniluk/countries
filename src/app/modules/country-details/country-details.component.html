@@ -1,0 +1,15 @@
+<mat-card class="card">
+	<mat-card-header>
+	  <div mat-card-avatar class="header-image"></div>
+	  <mat-card-title>{{ countryName | uppercase }}</mat-card-title>
+	  <mat-card-subtitle>Region: {{ countryInfo[0].region | uppercase }}, Stolica: {{ countryInfo[0].capital }}</mat-card-subtitle>
+	</mat-card-header>
+	<img mat-card-image src="{{ flagImage }}" alt="{{ countryName | uppercase}} flag">
+	<mat-card-content>
+		<ul>
+			<li>Populacja: {{ population }}</li>
+			<li>{{countryInfo[0].cioc}}</li>
+			<li><a href="{{countryInfo[0].maps.googleMaps}}">Mapa Google</a></li>
+		</ul>
+	</mat-card-content>
+  </mat-card>
