@@ -8,12 +8,33 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  returnAdress = '';
+	region = localStorage.getItem('region');
+	country = localStorage.getItem('country');
+
+  	returnAdress = 'countries/region/' + this.region;
+
 
 constructor(public dialog:MatDialog) {}
 
   showDialog() {
     const dialogRef = this.dialog.open(AboutMeComponent);
     dialogRef.afterClosed().subscribe();
+  }
+
+  clearLocalStorage() {
+	localStorage.removeItem('region');
+	localStorage.removeItem('country');
+  }
+
+  clearCountry() {
+	localStorage.removeItem('country');
+  }
+
+  get isRegion():boolean {
+	return localStorage.getItem('region') !== null
+  }
+
+  get isCountry():boolean {
+	return localStorage.getItem('country') !== null;
   }
 }

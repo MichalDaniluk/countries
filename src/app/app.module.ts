@@ -9,6 +9,8 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 
 import { CoreModule } from './modules/core/core.module';
 import { HomeModule } from './modules/home/home.module';
+import { StoreModule } from '@ngrx/store';
+import { countriesReducer } from './store/countries-reducers';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HomeModule } from './modules/home/home.module';
 	HomeModule,
     HttpClientModule,
 	AboutMeComponent,
-	AppRoutingModule,
+	StoreModule.forRoot({countries:countriesReducer}),
+	AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

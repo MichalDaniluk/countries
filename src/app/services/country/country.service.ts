@@ -20,10 +20,12 @@ export class CountryService {
 	constructor(private http: HttpClient) { }
 
 	public getCountries(region:string): Observable<Country[]> {
+		localStorage.setItem('region', region);
 		return this.http.get<Country[]>(`${this.apiUrl}/region/${region}`, this.httpOptions);
 	}
 
 	public getCountry(name:string): Observable<Country[]> {
+		localStorage.setItem('country', name);
 		return this.http.get<Country[]>(`${this.apiUrl}/name/${name}`, this.httpOptions);
 	}
 }
